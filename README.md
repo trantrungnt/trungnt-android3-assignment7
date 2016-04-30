@@ -9,3 +9,4 @@
 ##Tham khảo
 + [Floating Action Buttons](https://guides.codepath.com/android/floating-action-buttons)
 + [Tham khảo Floating Action Button](https://github.com/makovkastar/FloatingActionButton)
++ [tham khảo dạng file ảnh 9 Patch Image](http://developer.android.com/intl/zh-tw/guide/topics/resources/drawable-resource.html)
