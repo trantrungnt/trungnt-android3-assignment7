@@ -12,3 +12,4 @@
 + [tham khảo dạng file ảnh 9 Patch Image](http://developer.android.com/intl/zh-tw/guide/topics/resources/drawable-resource.html)
 + [Edit nine patch image online](https://romannurik.github.io/AndroidAssetStudio/nine-patches.html)
 + [Trang Web xử lý Transparency Online](http://www.online-image-editor.com/)
++ [Trang Paint Online](http://www.queeky.com/app)
