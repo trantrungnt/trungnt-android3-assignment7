@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ListView;
 
+import com.melnykov.fab.FloatingActionButton;
+
 public class MainActivity extends AppCompatActivity {
     private ListView listViewSMSMessage;
 
@@ -26,6 +28,11 @@ public class MainActivity extends AppCompatActivity {
         ListSMSMessageAdapter listSMSMessageAdapter = new ListSMSMessageAdapter((Context) this, R.layout.sms_message_template, SMSMessageManager.getOurInstance().getArrSMSMessage());
         listViewSMSMessage = (ListView) this.findViewById(R.id.lvDisplaySMSList);
         listViewSMSMessage.setAdapter(listSMSMessageAdapter);
+
+        FloatingActionButton fab = (FloatingActionButton) this.findViewById(R.id.fab);
+        fab.attachToListView(listViewSMSMessage);
+        fab.setType(FloatingActionButton.TYPE_NORMAL);
+
     }
 
 }
