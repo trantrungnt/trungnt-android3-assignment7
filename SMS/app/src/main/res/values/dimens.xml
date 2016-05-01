@@ -28,4 +28,10 @@
     <dimen name="tvAnswerRight_width">260dp</dimen>
     <dimen name="imgAvatarSend_width">100dp</dimen>
     <dimen name="imgAvatarSend_height">100dp</dimen>
+    <dimen name="imgAvatarSend_marginTop">10dp</dimen>
+    <dimen name="imgAvatarSend_marginLeft">10dp</dimen>
+    <dimen name="imgAvatarReceive_marginLeft">10dp</dimen>
+    <dimen name="imgAvatarReceive_marginTop">10dp</dimen>
+    <dimen name="imgAvatarReceive_width">100dp</dimen>
+    <dimen name="imgAvatarReceive_height">100dp</dimen>
 </resources>

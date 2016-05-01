@@ -5,6 +5,8 @@
 
     <ImageView
         android:id="@+id/imgAvatarSend"
+        android:layout_marginTop="@dimen/imgAvatarSend_marginTop"
+        android:layout_marginLeft="@dimen/imgAvatarSend_marginLeft"
         android:layout_width="@dimen/imgAvatarSend_width"
         android:layout_height="@dimen/imgAvatarSend_height" />
     <TextView
@@ -28,4 +30,12 @@
         android:layout_width="@dimen/tvAnswerRight_width"
         android:layout_height="wrap_content" />
 
+    <ImageView
+        android:id="@+id/imgAvatarReceive"
+        android:layout_below="@id/tvAnswerLeft"
+        android:layout_toRightOf="@id/tvAnswerRight"
+        android:layout_marginLeft="@dimen/imgAvatarReceive_marginLeft"
+        android:layout_marginTop="@dimen/imgAvatarReceive_marginTop"
+        android:layout_width="@dimen/imgAvatarReceive_width"
+        android:layout_height="@dimen/imgAvatarReceive_height" />
 </RelativeLayout>
