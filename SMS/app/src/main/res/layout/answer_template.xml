@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tvAnswerLeft"
+        android:paddingTop="@dimen/tvAnswerLeft_paddingTop"
+        android:paddingLeft="@dimen/tvAnswerLeft_paddingLeft"
+        android:paddingRight="@dimen/tvAnswerLeft_paddingRight"
+        android:background="@drawable/shape_type_of_left"
+        android:layout_width="@dimen/tvAnswerLeft_layoutWidth"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

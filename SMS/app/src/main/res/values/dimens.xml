@@ -11,4 +11,8 @@
     <dimen name="text_view_marginTop">15dp</dimen>
     <dimen name="text_view_marginLeft">15dp</dimen>
     <dimen name="text_view_text_size">20sp</dimen>
+    <dimen name="tvAnswerLeft_paddingTop">12dp</dimen>
+    <dimen name="tvAnswerLeft_paddingLeft">35dp</dimen>
+    <dimen name="tvAnswerLeft_paddingRight">10dp</dimen>
+    <dimen name="tvAnswerLeft_layoutWidth">380dp</dimen>
 </resources>
