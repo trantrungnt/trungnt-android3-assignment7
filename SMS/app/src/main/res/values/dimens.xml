@@ -34,4 +34,7 @@
     <dimen name="imgAvatarReceive_marginTop">10dp</dimen>
     <dimen name="imgAvatarReceive_width">100dp</dimen>
     <dimen name="imgAvatarReceive_height">100dp</dimen>
+    <dimen name="tvAnswerLeft_width">340dp</dimen>
+    <dimen name="tvAnswerRight_height">150dp</dimen>
+    <dimen name="tvAnswerLeft_height">150dp</dimen>
 </resources>
