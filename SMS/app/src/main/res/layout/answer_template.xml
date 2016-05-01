@@ -1,24 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <ImageView
+        android:id="@+id/imgAvatarSend"
+        android:layout_width="@dimen/imgAvatarSend_width"
+        android:layout_height="@dimen/imgAvatarSend_height" />
     <TextView
         android:id="@+id/tvAnswerLeft"
         android:paddingTop="@dimen/tvAnswerLeft_paddingTop"
         android:paddingLeft="@dimen/tvAnswerLeft_paddingLeft"
         android:paddingRight="@dimen/tvAnswerLeft_paddingRight"
         android:background="@drawable/shape_type_of_left"
-        android:layout_width="match_parent"
+        android:layout_toRightOf="@id/imgAvatarSend"
+        android:layout_width="340dp"
         android:layout_height="wrap_content" />
 
     <TextView
         android:id="@+id/tvAnswerRight"
-        android:paddingTop="10dp"
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp"
+        android:layout_below="@id/tvAnswerLeft"
+        android:paddingTop="@dimen/tvAnswerRight_paddingTop"
+        android:paddingLeft="@dimen/tvAnswerRight_paddingLeft"
+        android:paddingRight="@dimen/tvAnswerRight_paddingRight"
+        android:maxLength="255"
         android:background="@drawable/shape_type_of_right"
-        android:layout_width="match_parent"
+        android:layout_width="@dimen/tvAnswerRight_width"
         android:layout_height="wrap_content" />
 
-</LinearLayout>
+</RelativeLayout>

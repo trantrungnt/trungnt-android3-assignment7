@@ -22,4 +22,10 @@
     <dimen name="imgDisplayAnswerTypeOfRight_width">80dp</dimen>
     <dimen name="imgDisplayAnswerTypeOfRight_height">80dp</dimen>
     <dimen name="lvDisplayAnswer_height">400dp</dimen>
+    <dimen name="tvAnswerRight_paddingTop">10dp</dimen>
+    <dimen name="tvAnswerRight_paddingLeft">15dp</dimen>
+    <dimen name="tvAnswerRight_paddingRight">15dp</dimen>
+    <dimen name="tvAnswerRight_width">260dp</dimen>
+    <dimen name="imgAvatarSend_width">100dp</dimen>
+    <dimen name="imgAvatarSend_height">100dp</dimen>
 </resources>
