@@ -22,6 +22,8 @@ private AbstractList<SMSBody> arrListReceiveSMS;
 ```
 2 mảng này dùng để hiển thị ra các SMS được nhận và các SMS được gửi. Tạo class SMSBody có tác dụng: khi cùng 1 số điện thoại của 1 người gửi đến, ta có thể gộp nội dung được gửi hoặc được nhận vào cùng 1 số đã gửi đến và hiển thị ra ngoài màn hình.
 
++ Ảnh 9-patch là ảnh được chia ra làm 9 phần. Ở đây, ta tạo ảnh nên có hình Reply Left và Reply Right có định dạng file answer1.9.png và answer2.9.png; trước tiên, ta vẽ 2 hình này và lưu kiểu dạng file png. Sau đó, ta xử lý Transparency cho ảnh và chỉnh 4 ảnh góc ảnh này giữ nguyên (xử lý 4 góc ảnh bằng trang web online-image-editor.com hoặc xử lý ảnh bằng FileEditor trong Android Studio - xem lại hướng dẫn vì chưa xử lý bằng Android Studio nên chưa rõ)
+
 
 ##Môi trường phát triển
 + Mảy ảo AVD dùng Hệ điều hành Android api 21
