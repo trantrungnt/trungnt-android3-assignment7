@@ -11,6 +11,12 @@ public class SMSMessageManager extends Application {
     private static SMSMessageManager ourInstance = new SMSMessageManager();
     private ArrayList<ReceiveSMS> arrListSMSMessage = new ArrayList<>();
 
+    public ArrayList<SendSMS> getArrayListSMSSend() {
+        return arrayListSMSSend;
+    }
+
+    private ArrayList<SendSMS> arrayListSMSSend = new ArrayList<>();
+
     public ArrayList<ReceiveSMS> getArrSMSMessage() {
         return arrListSMSMessage;
     }
