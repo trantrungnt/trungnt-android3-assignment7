@@ -24,6 +24,44 @@ private AbstractList<SMSBody> arrListReceiveSMS;
 
 + Ảnh 9-patch là ảnh được chia ra làm 9 phần. Ở đây, ta tạo ảnh nên có hình Reply Left và Reply Right có định dạng file answer1.9.png và answer2.9.png; trước tiên, ta vẽ 2 hình này và lưu kiểu dạng file png. Sau đó, ta xử lý Transparency cho ảnh và chỉnh 4 ảnh góc ảnh này giữ nguyên (xử lý 4 góc ảnh bằng trang web online-image-editor.com hoặc xử lý ảnh bằng FileEditor trong Android Studio - xem lại hướng dẫn vì chưa xử lý bằng Android Studio nên chưa rõ)
 
++ Tạo Floating Action Button: vào file build.gradle của Module:app và add thư viện 'com.melnykov:floatingactionbutton:1.3.0' vào và sync về sử dụng
+```
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:23.3.0'
+    compile 'com.melnykov:floatingactionbutton:1.3.0'
+}
+```
+Trong giao diện activity_main.xml,  ta add nó vào giao diện
+```
+ <com.melnykov.fab.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_alignParentBottom="true"
+        android:keepScreenOn="true"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/plus"
+        fab:fab_colorNormal="@color/colorAccent"
+        fab:fab_colorPressed="@color/accent_pressed"
+        fab:fab_colorRipple="@color/ripple" />
+```
+Và trong MainActivity.java, ta thêm vào đoạn code
+```
+ private void initDisplayListSMSMessage()
+    {
+        ListSMSMessageAdapter listSMSMessageAdapter = new ListSMSMessageAdapter((Context) this, R.layout.sms_message_template, SMSMessageManager.getOurInstance().getArrSMSMessage());
+        listViewSMSMessage = (ListView) this.findViewById(R.id.lvDisplaySMSList);
+        listViewSMSMessage.setAdapter(listSMSMessageAdapter);
+
+        FloatingActionButton fab = (FloatingActionButton) this.findViewById(R.id.fab);
+        fab.attachToListView(listViewSMSMessage);
+        fab.setType(FloatingActionButton.TYPE_NORMAL);
+
+    }
+```
 
 ##Môi trường phát triển
 + Mảy ảo AVD dùng Hệ điều hành Android api 21
