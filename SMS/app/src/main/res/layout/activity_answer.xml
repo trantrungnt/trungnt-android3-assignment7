@@ -18,11 +18,12 @@
         android:layout_width="@dimen/editTextContentSendSMS_width"
         android:layout_height="@dimen/editTextContentSendSMS_height" />
 
-    <ImageView
-        android:id="@+id/imgDisplayAnswerTypeOfRight"
+    <Button
+        android:id="@+id/btnSend"
+        android:background="@drawable/send"
         android:layout_below="@id/lvDisplayAnswer"
         android:layout_toRightOf="@id/editTextContentSendSMS"
-        android:layout_marginLeft="@dimen/imgDisplayAnswerTypeOfRight_marginLeft"
-        android:layout_width="@dimen/imgDisplayAnswerTypeOfRight_width"
-        android:layout_height="@dimen/imgDisplayAnswerTypeOfRight_height" />
+        android:layout_marginLeft="@dimen/btnSend_marginLeft"
+        android:layout_width="@dimen/btnSend_width"
+        android:layout_height="@dimen/btnSend_height" />
 </RelativeLayout>
