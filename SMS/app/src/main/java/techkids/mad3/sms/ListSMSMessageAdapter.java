@@ -14,21 +14,21 @@ import java.util.ArrayList;
  * Created by TrungNT on 4/29/2016.
  */
 public class ListSMSMessageAdapter  extends BaseAdapter {
-    private ArrayList<Message> arrListSMSMessage;
+    private ArrayList<ReceiveSMS> arrListReceiveSMS;
     private int LayoutItemID;
     private TextView txtPhone, txtContentSMSMessage;
     private Context mContext;
-    private Message message;
+    private ReceiveSMS receiveSMS;
     private ImageView avatar;
 
     @Override
     public int getCount() {
-        return arrListSMSMessage.size();
+        return arrListReceiveSMS.size();
     }
 
     @Override
-    public Message getItem(int position) {
-        return arrListSMSMessage.get(position);
+    public ReceiveSMS getItem(int position) {
+        return arrListReceiveSMS.get(position);
     }
 
     @Override
@@ -38,7 +38,7 @@ public class ListSMSMessageAdapter  extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        message = getItem(position);
+        receiveSMS = getItem(position);
 
         if (convertView == null) {
             convertView = LayoutInflater.from(mContext).inflate(R.layout.sms_message_template, parent, false);
@@ -55,16 +55,16 @@ public class ListSMSMessageAdapter  extends BaseAdapter {
         else
             avatar.setImageResource(R.drawable.person1);
 
-        txtPhone.setText(message.getPhone());
-        txtContentSMSMessage.setText(message.getContentSMS());
+        txtPhone.setText(receiveSMS.getPhone());
+        txtContentSMSMessage.setText(receiveSMS.getArrListSMSBodyReceive().get(position).getContentSMS().toString());
 
         return convertView;
     }
 
-    public ListSMSMessageAdapter(Context mContext, int layoutItemID, ArrayList<Message> arrListSMSMessage)
+    public ListSMSMessageAdapter(Context mContext, int layoutItemID, ArrayList<ReceiveSMS> arrListReceiveSMS)
     {
         this.mContext = mContext;
         this.LayoutItemID = layoutItemID;
-        this.arrListSMSMessage = arrListSMSMessage;
+        this.arrListReceiveSMS = arrListReceiveSMS;
     }
 }

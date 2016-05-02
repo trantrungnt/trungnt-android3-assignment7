@@ -12,12 +12,20 @@ import android.telephony.SmsMessage;
 import android.util.Log;
 import android.widget.ListView;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  * Created by TrungNT on 4/29/2016.
  */
 public class SMSBroadCastReceiver extends BroadcastReceiver {
+    private static final SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MMM dd");
+    private Date strCurrentDate;
+
     @Override
     public void onReceive(Context context, Intent intent) {
+        strCurrentDate = new Date();
+
         Bundle bundle = intent.getExtras();
         if (bundle != null) {
             Object[] sms = (Object[]) bundle.get("pdus");
@@ -26,13 +34,14 @@ public class SMSBroadCastReceiver extends BroadcastReceiver {
 
                 String smsBody = smsMessage.getDisplayMessageBody();
                 String address = smsMessage.getDisplayOriginatingAddress();
+                String currentDate = simpleDateFormat.format(strCurrentDate);
 
                 //Toast.makeText(context, smsBody + " - " + address, Toast.LENGTH_SHORT).show();
 
                 //////////////////////////////////////////////////////////////////////////////////
                 //luu so dien thoai va noi dung tin nhan vua nhan vao SMSMessageManager
-                Message omessage = new Message(address, smsBody);
-                SMSMessageManager.getOurInstance().getArrSMSMessage().add(omessage); //tai sao du lieu Null khi lay ra ??????
+                ReceiveSMS receiveSMS = new ReceiveSMS(address, smsBody, currentDate);
+                SMSMessageManager.getOurInstance().getArrSMSMessage().add(receiveSMS); //tai sao du lieu Null khi lay ra ??????
                 Log.d("4444", String.valueOf(SMSMessageManager.getOurInstance().getArrSMSMessage().size()));
                 ///////////////////////////////////////////////////////////////////////////////////
                 //Hien thi Notification khi nhan duoc tin nhan SMS

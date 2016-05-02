@@ -9,9 +9,9 @@ import java.util.ArrayList;
  */
 public class SMSMessageManager extends Application {
     private static SMSMessageManager ourInstance = new SMSMessageManager();
-    private ArrayList<Message> arrListSMSMessage = new ArrayList<>();
+    private ArrayList<ReceiveSMS> arrListSMSMessage = new ArrayList<>();
 
-    public ArrayList<Message> getArrSMSMessage() {
+    public ArrayList<ReceiveSMS> getArrSMSMessage() {
         return arrListSMSMessage;
     }
 
