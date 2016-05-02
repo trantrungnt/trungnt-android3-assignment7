@@ -16,3 +16,4 @@
 + [Tham khảo Drawables](https://guides.codepath.com/android/Drawables)
 + [Draw Shapes in Android](https://androidresearch.wordpress.com/2012/03/24/drawing-shapes-in-android/)
 + [Tham khảo Send SMS trong Android](http://www.tutorialspoint.com/android/android_sending_sms.htm)
++ [How to send sms message in Android](http://www.mkyong.com/android/how-to-send-sms-message-in-android/)
