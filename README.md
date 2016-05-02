@@ -13,12 +13,12 @@ public abstract class Message {
 
 + Định nghĩa class SMSBody để chứa thuộc tính ContentSMS và Date (dùng cho các class SendSMS và ReceiveSMs sử dụng và lưu nó vào 1 mảng)
 ```
-private AbstractList<SMSBody> arrListSendSMS;
+   private ArrayList<SMSBody> arrListSendSMS;
 ```
 
 và mảng
 ```
-private AbstractList<SMSBody> arrListReceiveSMS;
+   private ArrayList<SMSBody> arrListSMSBodyReceive;
 ```
 2 mảng này dùng để hiển thị ra các SMS được nhận và các SMS được gửi. Tạo class SMSBody có tác dụng: khi cùng 1 số điện thoại của 1 người gửi đến, ta có thể gộp nội dung được gửi hoặc được nhận vào cùng 1 số đã gửi đến và hiển thị ra ngoài màn hình.
 

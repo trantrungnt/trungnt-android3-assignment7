@@ -7,11 +7,11 @@ import java.util.ArrayList;
  * Created by TrungNT on 5/3/2016.
  */
 public class SendSMS extends Message {
-    public AbstractList<SMSBody> getArrListSendSMS() {
+    public ArrayList<SMSBody> getArrListSendSMS() {
         return arrListSendSMS;
     }
 
-    private AbstractList<SMSBody> arrListSendSMS;
+    private ArrayList<SMSBody> arrListSendSMS;
 
     private SendSMS()
     {
