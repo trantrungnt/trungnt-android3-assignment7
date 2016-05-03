@@ -9,4 +9,7 @@
     <color name="accent">#E91E63</color>
     <color name="accent_pressed">#C2185B</color>
     <color name="accentColorPrimary">#F50057</color>
+    <color name="colorFirstActionBar">#0091EA</color>
+    <color name="colorSecondActionBar">#448AFF</color>
+    <color name="colorThirdActionBar">#FFFFFF</color>
 </resources>

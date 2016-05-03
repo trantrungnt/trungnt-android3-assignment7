@@ -3,10 +3,12 @@ package techkids.mad3.sms;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.telephony.SmsManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 /**
  * Created by TrungNT on 5/3/2016.
@@ -47,7 +49,17 @@ public class AnswerActivity extends AppCompatActivity implements View.OnClickLis
 
         if (id == R.id.btnSend)
         {
-
+//            try {
+//                SmsManager smsManager = SmsManager.getDefault();
+//                smsManager.sendTextMessage(phoneNo, null, sms, null, null);
+//                Toast.makeText(getApplicationContext(), "SMS Sent!",
+//                        Toast.LENGTH_LONG).show();
+//            } catch (Exception e) {
+//                Toast.makeText(getApplicationContext(),
+//                        "SMS faild, please try again later!",
+//                        Toast.LENGTH_LONG).show();
+//                e.printStackTrace();
+//            }
         }
     }
 }

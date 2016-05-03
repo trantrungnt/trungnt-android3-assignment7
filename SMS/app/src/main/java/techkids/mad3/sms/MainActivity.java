@@ -2,16 +2,22 @@ package techkids.mad3.sms;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.melnykov.fab.FloatingActionButton;
 import com.melnykov.fab.ScrollDirectionListener;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     private ListView listViewSMSMessage;
@@ -57,6 +63,16 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intentDisplayAnswerActivity);
             }
         });
+
+        getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        getSupportActionBar().setDisplayShowCustomEnabled(true);
+        getSupportActionBar().setCustomView(R.layout.custom_action_bar_layout);
+        View view =getSupportActionBar().getCustomView();
+
+        Window window = getWindow();
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        window.setStatusBarColor(Color.parseColor("#F57F17"));
     }
 
 }
