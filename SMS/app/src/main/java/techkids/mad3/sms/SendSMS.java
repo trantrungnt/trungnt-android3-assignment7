@@ -33,4 +33,13 @@ public class SendSMS extends Message {
     public void setPhone(String phone) {
         this.phone = phone;
     }
+
+    //lay gia tri cua phan tu cuoi cung trong mang arrListSendSMS neu phan tu do co gia tri va nam trong mang nay
+    public SMSBody getLastElementSMSBody()
+    {
+        if (arrListSendSMS.size()==0)
+            return null;
+
+        return arrListSendSMS.get(arrListSendSMS.size()-1);
+    }
 }

@@ -6,10 +6,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.melnykov.fab.FloatingActionButton;
+import com.melnykov.fab.ScrollDirectionListener;
 
 public class MainActivity extends AppCompatActivity {
     private ListView listViewSMSMessage;
@@ -36,6 +38,13 @@ public class MainActivity extends AppCompatActivity {
         FloatingActionButton fab = (FloatingActionButton) this.findViewById(R.id.fab);
         fab.attachToListView(listViewSMSMessage);
         fab.setType(FloatingActionButton.TYPE_NORMAL);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentOpenAnswerActivity = new Intent(MainActivity.this, AnswerActivity.class);
+                startActivity(intentOpenAnswerActivity);
+            }
+        });
 
 
         //click vao 1 item tren listViewSMSMessage thi mo giao dien Send SMS
