@@ -16,9 +16,9 @@
     <dimen name="tvAnswerLeft_paddingRight">10dp</dimen>
     <dimen name="tvAnswerLeft_layoutWidth">380dp</dimen>
     <dimen name="editTextContentSendSMS_marginLeft">20dp</dimen>
-    <dimen name="editTextContentSendSMS_width">250dp</dimen>
+    <dimen name="editTextContentSendSMS_width">220dp</dimen>
     <dimen name="editTextContentSendSMS_height">60dp</dimen>
-    <dimen name="btnSend_marginLeft">30dp</dimen>
+    <dimen name="btnSend_marginLeft">5dp</dimen>
     <dimen name="btnSend_width">60dp</dimen>
     <dimen name="btnSend_height">60dp</dimen>
     <dimen name="lvDisplayAnswer_height">400dp</dimen>
