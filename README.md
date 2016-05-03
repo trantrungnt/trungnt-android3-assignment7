@@ -75,6 +75,32 @@ Và trong MainActivity.java, ta thêm vào đoạn code
     }
 ```
 
++ Để ListView lvDisplaySMSList nhận sự kiện onItemClick(), trong giao diện activity_main.xml, ta cho thêm khai báo: android:descendantFocusability="blocksDescendants" trong RelativeLayout
+```
+     android:descendantFocusability="blocksDescendants"
+```
+Và trong ListView lvDisplaySMSList, ta khai báo
+```
+<ListView
+        android:id="@+id/lvDisplaySMSList"
+        android:focusableInTouchMode="false"
+        android:focusable="false"
+        android:clickable="false"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </ListView>
+```
+Trong file MainActivity.java, ta định nghĩa phương thức
+```
+//click vao 1 item tren listViewSMSMessage thi mo giao dien Send SMS
+        listViewSMSMessage.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Log.d("ID selected: ", String.valueOf(position));
+            }
+        });
+```
+
 ##Môi trường phát triển
 + Mảy ảo AVD dùng Hệ điều hành Android api 21
 
