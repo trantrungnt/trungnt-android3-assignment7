@@ -5,14 +5,20 @@
 
     <Button
         android:id="@+id/btnBack"
-        android:layout_width="50dp"
-        android:layout_height="50dp" />
+        android:background="@drawable/back"
+        android:layout_width="@dimen/btnBack_width"
+        android:layout_height="@dimen/btnBack_height" />
     <EditText
         android:id="@+id/editTextPhone"
         android:hint="To"
         android:textColorHint="@color/colorThirdActionBar"
         android:inputType="number"
         android:textColor="@color/colorThirdActionBar"
-        android:layout_width="280dp"
-        android:layout_height="50dp" />
+        android:layout_width="@dimen/editTextPhone_width"
+        android:layout_height="@dimen/editTextPhone_height" />
+    <Button
+        android:id="@+id/btnCheck"
+        android:background="@drawable/check"
+        android:layout_width="@dimen/btnCheck_width"
+        android:layout_height="@dimen/btnCheck_height" />
 </LinearLayout>
