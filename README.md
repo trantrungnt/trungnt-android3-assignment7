@@ -134,6 +134,47 @@ FloatingActionButton fab = (FloatingActionButton) this.findViewById(R.id.fab);
         });
 ```
 
++ Sửa giao diện thành phần ActionBar của Main Activity: 
+Trong file style.xml, ta khai báo
+```
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+    </style>
+    <style name="CustomTheme" parent="Theme.AppCompat.Light">
+        <item name="contentInsetStart">0dp</item>
+        <item name="contentInsetEnd">0dp</item>
+        <item name="colorPrimary">@color/colorFirstActionBar</item>
+        <item name="colorPrimaryDark">@color/colorSecondActionBar</item>
+        <item name="colorAccent">@color/colorThirdActionBar</item>
+    </style>
+</resources>
+```
+Trong file Mainifest.xml, ta khai báo sử dụng CustomTheme
+```
+
+ <application
+        android:name=".SMSMessageManager"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/CustomTheme">
+        ...
+ </application>
+```
+Tạo giao diện custom_action_bar_layout.xml
+
+Trong fiile MainActivity.java, ta viết code dưới trong phương thức void initDisplayListSMSMessage(), Phương thức này được gọi trong void onResume()
+```
+        getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        getSupportActionBar().setDisplayShowCustomEnabled(true);
+        getSupportActionBar().setCustomView(R.layout.custom_action_bar_layout);
+        View view =getSupportActionBar().getCustomView();
+```
+
 
 ##Môi trường phát triển
 + Mảy ảo AVD dùng Hệ điều hành Android api 21
