@@ -63,6 +63,18 @@ Và trong MainActivity.java, ta thêm vào đoạn code
     }
 ```
 
++ Kiểm tra phần tử cuối cùng của mảng ArrayList<SMSBody> arrListSMSBodyReceive có tồn tại không?  Nếu phần tử của mảng này không có thì mảng này null, còn nếu có phần tử cuối cùng trong mảng tồn tại thì size của mảng giảm đi 1. Mục đích của việc này để không bị tràn vị trí của mảng (nếu không kiểm tra như vậy, khi truy cập vào mảng này, khi mảng không tồn tại giá trị nào và ta lấy giá trị => chương trình sẽ bị lỗi)
+```
+//dinh nghia kiem tra phan tu cuoi cung co trong mang arrListSMSBodyReceive khong?
+    public SMSBody getLastSMSBodyElement()
+    {
+        if (arrListSMSBodyReceive.size() == 0)
+            return null;
+
+        return arrListSMSBodyReceive.get(arrListSMSBodyReceive.size()-1);
+    }
+```
+
 ##Môi trường phát triển
 + Mảy ảo AVD dùng Hệ điều hành Android api 21
 
