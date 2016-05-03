@@ -1,6 +1,7 @@
 package techkids.mad3.sms;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -42,6 +43,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Log.d("ID selected: ", String.valueOf(position));
+
+                Intent intentDisplayAnswerActivity = new Intent(MainActivity.this, AnswerActivity.class);
+                startActivity(intentDisplayAnswerActivity);
             }
         });
     }

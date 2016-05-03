@@ -20,6 +20,10 @@
             </intent-filter>
         </activity>
 
+        <activity android:name="techkids.mad3.sms.AnswerActivity">
+
+        </activity>
+
         <receiver android:name=".SMSBroadCastReceiver" android:exported="true" >
             <intent-filter>
                 <action android:name="android.provider.Telephony.SMS_RECEIVED" />
