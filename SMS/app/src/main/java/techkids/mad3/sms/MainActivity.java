@@ -3,6 +3,9 @@ package techkids.mad3.sms;
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.melnykov.fab.FloatingActionButton;
@@ -33,6 +36,14 @@ public class MainActivity extends AppCompatActivity {
         fab.attachToListView(listViewSMSMessage);
         fab.setType(FloatingActionButton.TYPE_NORMAL);
 
+
+        //click vao 1 item tren listViewSMSMessage thi mo giao dien Send SMS
+        listViewSMSMessage.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Log.d("ID selected: ", String.valueOf(position));
+            }
+        });
     }
 
 }

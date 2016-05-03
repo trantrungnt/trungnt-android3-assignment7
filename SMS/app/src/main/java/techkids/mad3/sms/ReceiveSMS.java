@@ -33,4 +33,12 @@ public class ReceiveSMS extends Message{
         this.phone = phone;
     }
 
+    //dinh nghia kiem tra phan tu cuoi cung co trong mang arrListSMSBodyReceive khong?
+    public SMSBody getLastSMSBodyElement()
+    {
+        if (arrListSMSBodyReceive.size() == 0)
+            return null;
+
+        return arrListSMSBodyReceive.get(arrListSMSBodyReceive.size()-1);
+    }
 }

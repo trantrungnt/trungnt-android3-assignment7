@@ -38,7 +38,7 @@ public class ListSMSMessageAdapter  extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        receiveSMS = getItem(position);
+        receiveSMS = arrListReceiveSMS.get(position);
 
         if (convertView == null) {
             convertView = LayoutInflater.from(mContext).inflate(R.layout.sms_message_template, parent, false);
@@ -56,7 +56,7 @@ public class ListSMSMessageAdapter  extends BaseAdapter {
             avatar.setImageResource(R.drawable.person1);
 
         txtPhone.setText(receiveSMS.getPhone());
-        txtContentSMSMessage.setText(receiveSMS.getArrListSMSBodyReceive().get(position).getContentSMS().toString());
+        txtContentSMSMessage.setText(receiveSMS.getLastSMSBodyElement().getContentSMS().toString());
 
         return convertView;
     }
