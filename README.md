@@ -151,3 +151,4 @@ FloatingActionButton fab = (FloatingActionButton) this.findViewById(R.id.fab);
 + [How to send sms message in Android](http://www.mkyong.com/android/how-to-send-sms-message-in-android/)
 + [Masterial Icon](https://materialdesignicons.com/)
 + [Customizing the toolbar in android (Action Bar)](http://www.vogella.com/tutorials/AndroidActionBar/article.html)
++ [Custom Action Bar example Tutorial](http://www.journaldev.com/9952/android-custom-action-bar-example-tutorial)
