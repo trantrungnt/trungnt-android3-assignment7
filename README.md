@@ -101,6 +101,26 @@ Trong file MainActivity.java, ta định nghĩa phương thức
         });
 ```
 
++ Đăng ký AnswerAcitivty trong Mainifest.xml để mở AnswerActivity
+```
+  <activity android:name="techkids.mad3.sms.AnswerActivity">
+  </activity>
+```
+Và khi click vào 1 item trong Listview listViewSMSMessage thì gọi phương thức onItemClick() và mở AnswerActivity
+```
+ //click vao 1 item tren listViewSMSMessage thi mo giao dien Send SMS
+        listViewSMSMessage.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Log.d("ID selected: ", String.valueOf(position));
+
+                Intent intentDisplayAnswerActivity = new Intent(MainActivity.this, AnswerActivity.class);
+                startActivity(intentDisplayAnswerActivity);
+            }
+        });
+```
+
+
 ##Môi trường phát triển
 + Mảy ảo AVD dùng Hệ điều hành Android api 21
 

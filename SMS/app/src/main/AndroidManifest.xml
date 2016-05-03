@@ -21,7 +21,6 @@
         </activity>
 
         <activity android:name="techkids.mad3.sms.AnswerActivity">
-
         </activity>
 
         <receiver android:name=".SMSBroadCastReceiver" android:exported="true" >
