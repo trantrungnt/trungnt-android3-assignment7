@@ -120,6 +120,20 @@ Và khi click vào 1 item trong Listview listViewSMSMessage thì gọi phương 
         });
 ```
 
++ KHi click vào nút FloatingActionButton thì hiển thị ra Giao diện của AnswerActivity
+```
+FloatingActionButton fab = (FloatingActionButton) this.findViewById(R.id.fab);
+        fab.attachToListView(listViewSMSMessage);
+        fab.setType(FloatingActionButton.TYPE_NORMAL);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentOpenAnswerActivity = new Intent(MainActivity.this, AnswerActivity.class);
+                startActivity(intentOpenAnswerActivity);
+            }
+        });
+```
+
 
 ##Môi trường phát triển
 + Mảy ảo AVD dùng Hệ điều hành Android api 21
