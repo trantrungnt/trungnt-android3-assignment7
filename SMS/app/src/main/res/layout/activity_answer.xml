@@ -21,6 +21,7 @@
     <Button
         android:id="@+id/btnSend"
         android:background="@drawable/send"
+        android:layout_marginTop="@dimen/btnSend_marginTop"
         android:layout_below="@id/lvDisplayAnswer"
         android:layout_toRightOf="@id/editTextContentSendSMS"
         android:layout_marginLeft="@dimen/btnSend_marginLeft"
