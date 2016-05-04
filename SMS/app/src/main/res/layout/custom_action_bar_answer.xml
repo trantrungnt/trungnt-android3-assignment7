@@ -15,8 +15,8 @@
         android:text="01672510917"
         android:layout_marginTop="@dimen/tvPhone_marginTop"
         android:textColor="@color/colorThirdActionBar"
-        android:layout_width="210dp"
-        android:layout_height="50dp" />
+        android:layout_width="@dimen/tvPhone_width"
+        android:layout_height="@dimen/tvPhone_height" />
     <Button
         android:id="@+id/btnPhone"
         android:background="@drawable/phone"
