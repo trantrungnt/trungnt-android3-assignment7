@@ -45,4 +45,9 @@
     <dimen name="btnCheck_height">20dp</dimen>
     <dimen name="btnCheck_marginLeft">8dp</dimen>
     <dimen name="btnBack_marginRight">10dp</dimen>
+    <dimen name="btnBack_marginTop">20dp</dimen>
+    <dimen name="tvPhone_marginTop">20dp</dimen>
+    <dimen name="btnPhone_marginTop">20dp</dimen>
+    <dimen name="btnPhone_width">20dp</dimen>
+    <dimen name="btnPhone_height">20dp</dimen>
 </resources>

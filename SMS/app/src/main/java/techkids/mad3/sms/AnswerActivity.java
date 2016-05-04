@@ -2,6 +2,7 @@ package techkids.mad3.sms;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.telephony.SmsManager;
 import android.view.View;
@@ -31,6 +32,13 @@ public class AnswerActivity extends AppCompatActivity implements View.OnClickLis
         initDisplayAnswer();
     }
 
+    @Override
+    protected void onStart()
+    {
+        super.onStart();
+        initDisplayActionBarAnswer();
+    }
+
     private void initDisplayAnswer()
     {
         lvDisplayAnswer = (ListView) this.findViewById(R.id.lvDisplayAnswer);
@@ -41,6 +49,15 @@ public class AnswerActivity extends AppCompatActivity implements View.OnClickLis
         /////////////////////////////////////////////////////////////////////////////////////////
         ListSMSSendAdapter listSMSSendAdapter = new ListSMSSendAdapter((Context)this, R.layout.answer_template, SMSMessageManager.getOurInstance().getArrSMSMessage(), SMSMessageManager.getOurInstance().getArrayListSMSSend());
         lvDisplayAnswer.setAdapter(listSMSSendAdapter);
+    }
+
+    private void initDisplayActionBarAnswer()
+    {
+        getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        getSupportActionBar().setDisplayShowCustomEnabled(true);
+        getSupportActionBar().setCustomView(R.layout.custom_action_bar_answer);
+        View view =getSupportActionBar().getCustomView();
+
     }
 
     @Override
