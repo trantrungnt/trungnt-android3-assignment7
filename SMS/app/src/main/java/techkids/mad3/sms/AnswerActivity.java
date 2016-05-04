@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 /**
@@ -17,6 +18,7 @@ import android.widget.Toast;
 public class AnswerActivity extends AppCompatActivity implements View.OnClickListener {
     private ListView lvDisplayAnswer;
     private Button btnSend;
+    private TextView tvPhone;
     private EditText editTextContentSendSMS;
 
     @Override
@@ -43,6 +45,7 @@ public class AnswerActivity extends AppCompatActivity implements View.OnClickLis
     {
         lvDisplayAnswer = (ListView) this.findViewById(R.id.lvDisplayAnswer);
         editTextContentSendSMS = (EditText) this.findViewById(R.id.editTextContentSendSMS);
+        tvPhone = (TextView) this.findViewById(R.id.tvPhone);
         btnSend = (Button) this.findViewById(R.id.btnSend);
         btnSend.setOnClickListener(this);
 
@@ -63,20 +66,22 @@ public class AnswerActivity extends AppCompatActivity implements View.OnClickLis
     @Override
     public void onClick(View v) {
         int id = v.getId();
+        String phone = tvPhone.getText().toString();
+        String bodySMS = editTextContentSendSMS.getText().toString();
 
         if (id == R.id.btnSend)
         {
-//            try {
-//                SmsManager smsManager = SmsManager.getDefault();
-//                smsManager.sendTextMessage(phoneNo, null, sms, null, null);
-//                Toast.makeText(getApplicationContext(), "SMS Sent!",
-//                        Toast.LENGTH_LONG).show();
-//            } catch (Exception e) {
-//                Toast.makeText(getApplicationContext(),
-//                        "SMS faild, please try again later!",
-//                        Toast.LENGTH_LONG).show();
-//                e.printStackTrace();
-//            }
+            try {
+                SmsManager smsManager = SmsManager.getDefault();
+                smsManager.sendTextMessage(phone, null, bodySMS, null, null);
+                Toast.makeText(getApplicationContext(), "SMS Sent!",
+                        Toast.LENGTH_LONG).show();
+            } catch (Exception e) {
+                Toast.makeText(getApplicationContext(),
+                        "SMS sends fail, please try again later!",
+                        Toast.LENGTH_LONG).show();
+                e.printStackTrace();
+            }
         }
     }
 }
