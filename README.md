@@ -178,7 +178,7 @@ Trong fiile MainActivity.java, ta viết code dưới trong phương thức void
 
 ##Môi trường phát triển
 + Mảy ảo AVD dùng Hệ điều hành Android api 21
-+ Công cụ Android Studio version 2.1
++ Công cụ Android Studio verson 2.1
 
 ##Tham khảo
 + [Floating Action Buttons](https://guides.codepath.com/android/floating-action-buttons)
