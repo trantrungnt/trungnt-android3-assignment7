@@ -65,8 +65,7 @@ public class AnswerActivity extends AppCompatActivity implements View.OnClickLis
 
         //lay so dien thoai vua nhan duoc de gui tin nhan
         tvPhoneActionBar = (TextView) view.findViewById(R.id.tvPhoneActionBar);
-        bundleReceive = getIntent().getExtras();
-        displayPhoneActionBar = bundleReceive.getString("IDPhone");
+        displayPhoneActionBar = getIntent().getStringExtra("IDPhone").toString();
         tvPhoneActionBar.setText(displayPhoneActionBar);
     }
 

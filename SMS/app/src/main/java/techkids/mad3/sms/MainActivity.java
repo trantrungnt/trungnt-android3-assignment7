@@ -62,9 +62,7 @@ public class MainActivity extends AppCompatActivity{
         getSupportActionBar().setDisplayShowCustomEnabled(true);
         getSupportActionBar().setCustomView(R.layout.custom_action_bar_layout);
         View view =getSupportActionBar().getCustomView();
-
         editPhoneActionBar = (EditText) view.findViewById(R.id.editTextPhoneActionBar);
-        phoneSendTo = editPhoneActionBar.getText().toString();
 
         FloatingActionButton fab = (FloatingActionButton) this.findViewById(R.id.fab);
         fab.attachToListView(SMSMessageManager.getOurInstance().getlistViewSMSMessage());
@@ -72,6 +70,7 @@ public class MainActivity extends AppCompatActivity{
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                phoneSendTo = editPhoneActionBar.getText().toString();
                 //lay du lieu tu editTextPhoneActionBar va dung bundle dong goi du lieu, sau do intent day goi du lieu nay sang AnswerActivity
                 bundlePhoneSendTo = new Bundle();
                 bundlePhoneSendTo.putString("IDPhone", phoneSendTo);
