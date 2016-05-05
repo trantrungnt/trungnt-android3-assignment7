@@ -72,7 +72,7 @@ public class AnswerActivity extends AppCompatActivity implements View.OnClickLis
     @Override
     public void onClick(View v) {
         int id = v.getId();
-        String phone = tvPhone.getText().toString();
+        String phone = tvPhoneActionBar.getText().toString();
         String bodySMS = editTextContentSendSMS.getText().toString();
 
         if (id == R.id.btnSend)
