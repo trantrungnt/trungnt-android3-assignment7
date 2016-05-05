@@ -197,3 +197,4 @@ Trong fiile MainActivity.java, ta viết code dưới trong phương thức void
 + [Masterial Icon](https://materialdesignicons.com/)
 + [Customizing the toolbar in android (Action Bar)](http://www.vogella.com/tutorials/AndroidActionBar/article.html)
 + [Custom Action Bar example Tutorial](http://www.journaldev.com/9952/android-custom-action-bar-example-tutorial)
++ [Basic Action Bar - part5](https://blog.stylingandroid.com/basic-actionbar-part5/)
