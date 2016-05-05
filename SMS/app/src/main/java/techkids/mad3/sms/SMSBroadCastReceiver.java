@@ -68,10 +68,6 @@ public class SMSBroadCastReceiver extends BroadcastReceiver {
                         (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
                 mNotificationManager.notify(999, mBuilder.build());
             }
-
-//            //cap nhat Hien thi trong ListView listViewSMSMessage
-//            listViewSMSMessage = (ListView) MainActivity.this.findViewById(R.id.lvDisplaySMSList);
-//            notifyDataSetChanged();
         }
     }
 }

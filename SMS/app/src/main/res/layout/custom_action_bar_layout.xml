@@ -10,7 +10,7 @@
         android:layout_width="@dimen/btnBack_width"
         android:layout_height="@dimen/btnBack_height" />
     <EditText
-        android:id="@+id/editTextPhone"
+        android:id="@+id/editTextPhoneActionBar"
         android:hint="To"
         android:textColorHint="@color/colorThirdActionBar"
         android:inputType="number"

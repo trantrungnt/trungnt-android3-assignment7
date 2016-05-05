@@ -18,8 +18,10 @@ import android.widget.Toast;
 public class AnswerActivity extends AppCompatActivity implements View.OnClickListener {
     private ListView lvDisplayAnswer;
     private Button btnSend;
-    private TextView tvPhone;
+    private TextView tvPhone, tvPhoneActionBar;
     private EditText editTextContentSendSMS;
+    private Bundle bundleReceive;
+    private String displayPhoneActionBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +63,11 @@ public class AnswerActivity extends AppCompatActivity implements View.OnClickLis
         getSupportActionBar().setCustomView(R.layout.custom_action_bar_answer);
         View view =getSupportActionBar().getCustomView();
 
+        //lay so dien thoai vua nhan duoc de gui tin nhan
+        tvPhoneActionBar = (TextView) view.findViewById(R.id.tvPhoneActionBar);
+        bundleReceive = getIntent().getExtras();
+        displayPhoneActionBar = bundleReceive.getString("IDPhone");
+        tvPhoneActionBar.setText(displayPhoneActionBar);
     }
 
     @Override

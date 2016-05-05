@@ -11,8 +11,7 @@
         android:layout_width="@dimen/btnBack_width"
         android:layout_height="@dimen/btnBack_height" />
     <TextView
-        android:id="@+id/tvPhone"
-        android:text="01672510917"
+        android:id="@+id/tvPhoneActionBar"
         android:layout_marginTop="@dimen/tvPhone_marginTop"
         android:textColor="@color/colorThirdActionBar"
         android:layout_width="@dimen/tvPhone_width"
