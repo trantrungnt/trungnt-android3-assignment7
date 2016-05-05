@@ -19,8 +19,8 @@ import com.melnykov.fab.ScrollDirectionListener;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
-    private ListView listViewSMSMessage;
+public class MainActivity extends AppCompatActivity{
+    private ListSMSMessageAdapter listSMSMessageAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,12 +37,13 @@ public class MainActivity extends AppCompatActivity {
 
     private void initDisplayListSMSMessage()
     {
-        ListSMSMessageAdapter listSMSMessageAdapter = new ListSMSMessageAdapter((Context) this, R.layout.sms_message_template, SMSMessageManager.getOurInstance().getArrSMSMessage());
-        listViewSMSMessage = (ListView) this.findViewById(R.id.lvDisplaySMSList);
-        listViewSMSMessage.setAdapter(listSMSMessageAdapter);
+        listSMSMessageAdapter = new ListSMSMessageAdapter((Context) this, R.layout.sms_message_template, SMSMessageManager.getOurInstance().getArrSMSMessage());
+        SMSMessageManager.getOurInstance().setListMessageAdapter(listSMSMessageAdapter);
+        SMSMessageManager.getOurInstance().setListViewSMSMessage((ListView) this.findViewById(R.id.lvDisplaySMSList));
+        SMSMessageManager.getOurInstance().getlistViewSMSMessage().setAdapter(SMSMessageManager.getOurInstance().getListMessageAdapter());
 
         FloatingActionButton fab = (FloatingActionButton) this.findViewById(R.id.fab);
-        fab.attachToListView(listViewSMSMessage);
+        fab.attachToListView(SMSMessageManager.getOurInstance().getlistViewSMSMessage());
         fab.setType(FloatingActionButton.TYPE_NORMAL);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         //click vao 1 item tren listViewSMSMessage thi mo giao dien Send SMS
-        listViewSMSMessage.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        SMSMessageManager.getOurInstance().getlistViewSMSMessage().setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Log.d("ID selected: ", String.valueOf(position));

@@ -1,6 +1,7 @@
 package techkids.mad3.sms;
 
 import android.app.Application;
+import android.widget.ListView;
 
 import java.util.ArrayList;
 
@@ -9,6 +10,30 @@ import java.util.ArrayList;
  */
 public class SMSMessageManager extends Application {
     private static SMSMessageManager ourInstance = new SMSMessageManager();
+    private static ListSMSMessageAdapter listSMSMessageAdapter;
+    private static ListView listViewSMSMessage;
+
+    public void setListMessageAdapter(ListSMSMessageAdapter listSMSMessageAdapter)
+    {
+        this.listSMSMessageAdapter = listSMSMessageAdapter;
+    }
+
+    public ListSMSMessageAdapter getListMessageAdapter()
+    {
+        return listSMSMessageAdapter;
+    }
+
+    public void setListViewSMSMessage(ListView listViewSMSMessage)
+    {
+        this.listViewSMSMessage = listViewSMSMessage;
+    }
+
+    public ListView getlistViewSMSMessage()
+    {
+        return listViewSMSMessage;
+    }
+
+
     private ArrayList<ReceiveSMS> arrListSMSMessage = new ArrayList<>();
 
     public ArrayList<SendSMS> getArrayListSMSSend() {

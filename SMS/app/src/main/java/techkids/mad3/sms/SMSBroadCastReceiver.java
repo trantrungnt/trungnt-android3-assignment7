@@ -41,7 +41,9 @@ public class SMSBroadCastReceiver extends BroadcastReceiver {
                 //////////////////////////////////////////////////////////////////////////////////
                 //luu so dien thoai va noi dung tin nhan vua nhan vao SMSMessageManager
                 ReceiveSMS receiveSMS = new ReceiveSMS(address, smsBody, currentDate);
-                SMSMessageManager.getOurInstance().getArrSMSMessage().add(receiveSMS); //tai sao du lieu Null khi lay ra ??????
+                SMSMessageManager.getOurInstance().getArrSMSMessage().add(receiveSMS);
+                //thong bao Notification cua ListView o day
+                SMSMessageManager.getOurInstance().getListMessageAdapter().notifyDataSetChanged();
                 Log.d("4444", String.valueOf(SMSMessageManager.getOurInstance().getArrSMSMessage().size()));
                 ///////////////////////////////////////////////////////////////////////////////////
                 //Hien thi Notification khi nhan duoc tin nhan SMS
@@ -66,6 +68,10 @@ public class SMSBroadCastReceiver extends BroadcastReceiver {
                         (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
                 mNotificationManager.notify(999, mBuilder.build());
             }
+
+//            //cap nhat Hien thi trong ListView listViewSMSMessage
+//            listViewSMSMessage = (ListView) MainActivity.this.findViewById(R.id.lvDisplaySMSList);
+//            notifyDataSetChanged();
         }
     }
 }
