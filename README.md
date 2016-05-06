@@ -239,6 +239,15 @@ private void initDisplayActionBarAnswer()
     }
 ```
 
++ Để nhận được tin nhắn, đồng thời Danh sách hiển thị tin nhắn ReceiveSMSList tự cập nhật danh sách, ta dùng adapter SMSMessageManager.getOurInstance().getListMessageAdapter().notifyDataSetChanged()
+```
+      //luu so dien thoai va noi dung tin nhan vua nhan vao SMSMessageManager
+      ReceiveSMS receiveSMS = new ReceiveSMS(address, smsBody, currentDate);
+      SMSMessageManager.getOurInstance().getArrSMSMessage().add(receiveSMS);
+      //thong bao Notification cua ListView o day
+      SMSMessageManager.getOurInstance().getListMessageAdapter().notifyDataSetChanged();
+```
+
 ##Môi trường phát triển
 + Mảy ảo AVD dùng Hệ điều hành Android api 21
 + Công cụ Android Studio verson 2.1
