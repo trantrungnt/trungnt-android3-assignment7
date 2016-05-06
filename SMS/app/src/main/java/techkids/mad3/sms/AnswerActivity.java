@@ -13,6 +13,9 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  * Created by TrungNT on 5/3/2016.
  */
@@ -23,6 +26,8 @@ public class AnswerActivity extends AppCompatActivity implements View.OnClickLis
     private EditText editTextContentSendSMS;
     private Bundle bundleReceive;
     private String displayPhoneActionBar;
+    private static final SimpleDateFormat sendDateFormat = new SimpleDateFormat("MMM dd");
+    private Date strSendCurrentDate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -108,5 +113,13 @@ public class AnswerActivity extends AppCompatActivity implements View.OnClickLis
                     Toast.LENGTH_LONG).show();
             e.printStackTrace();
         }
+
+        strSendCurrentDate = new Date();
+        String currentSendDate = sendDateFormat.format(strSendCurrentDate);
+
+        SendSMS sendSMS = new SendSMS(phone, bodySMS, currentSendDate);
+        SMSMessageManager.getOurInstance().getArrayListSMSSend().add(sendSMS);
+
+
     }
 }

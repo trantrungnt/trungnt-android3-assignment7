@@ -1,6 +1,7 @@
 package techkids.mad3.sms;
 
 import android.content.Context;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -52,8 +53,21 @@ public class ListSMSSendAdapter extends BaseAdapter {
         txtContentSMSReceive = (TextView) convertView.findViewById(R.id.tvAnswerLeft);
         txtContentSMSSend = (TextView) convertView.findViewById(R.id.tvAnswerRight);
 
-        txtContentSMSReceive.setText(receiveSMS.getLastSMSBodyElement().getContentSMS().toString());
-        txtContentSMSSend.setText(sendSMS.getLastElementSMSBody().getContentSMS().toString());
+        if (TextUtils.isEmpty(sendSMS.getLastElementSMSBody().getContentSMS())) {
+            txtContentSMSSend.setText(sendSMS.getLastElementSMSBody().getContentSMS().toString());
+            txtContentSMSReceive.setVisibility(View.GONE);
+        }
+
+        if (TextUtils.isEmpty(receiveSMS.getLastSMSBodyElement().getContentSMS())) {
+            txtContentSMSReceive.setText(receiveSMS.getLastSMSBodyElement().getContentSMS().toString());
+            txtContentSMSSend.setVisibility(View.GONE);
+        }
+
+        if (!TextUtils.isEmpty(sendSMS.getLastElementSMSBody().getContentSMS()) && !TextUtils.isEmpty(receiveSMS.getLastSMSBodyElement().getContentSMS()) )
+        {
+            txtContentSMSSend.setText(sendSMS.getLastElementSMSBody().getContentSMS().toString());
+            txtContentSMSReceive.setText(receiveSMS.getLastSMSBodyElement().getContentSMS().toString());
+        }
 
         return convertView;
     }
