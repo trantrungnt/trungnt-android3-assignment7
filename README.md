@@ -178,6 +178,21 @@ Trong fiile MainActivity.java, ta viết code dưới trong phương thức void
         View view =getSupportActionBar().getCustomView();
 ```
 
+Lấy dữ liệu từ tvPhoneActionBar
+```
+private void initDisplayActionBarAnswer()
+    {
+        getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        getSupportActionBar().setDisplayShowCustomEnabled(true);
+        getSupportActionBar().setCustomView(R.layout.custom_action_bar_answer);
+        View view =getSupportActionBar().getCustomView();
+
+        //lay so dien thoai vua nhan duoc de gui tin nhan
+        tvPhoneActionBar = (TextView) view.findViewById(R.id.tvPhoneActionBar);
+        displayPhoneActionBar = getIntent().getStringExtra("IDPhone").toString();
+        tvPhoneActionBar.setText(displayPhoneActionBar);
+    }
+```
 
 ##Môi trường phát triển
 + Mảy ảo AVD dùng Hệ điều hành Android api 21
