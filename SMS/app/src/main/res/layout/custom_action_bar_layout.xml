@@ -4,7 +4,7 @@
     android:layout_height="match_parent">
 
     <Button
-        android:id="@+id/btnBack"
+        android:id="@+id/btnBackActionBarMain"
         android:background="@drawable/back"
         android:layout_marginRight="@dimen/btnBack_marginRight"
         android:layout_width="@dimen/btnBack_width"
@@ -18,7 +18,7 @@
         android:layout_width="@dimen/editTextPhone_width"
         android:layout_height="@dimen/editTextPhone_height" />
     <Button
-        android:id="@+id/btnCheck"
+        android:id="@+id/btnCheckActionBarMain"
         android:background="@drawable/check"
         android:layout_marginLeft="@dimen/btnCheck_marginLeft"
         android:layout_width="@dimen/btnCheck_width"

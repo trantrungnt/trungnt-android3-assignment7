@@ -13,6 +13,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 
@@ -21,11 +22,12 @@ import com.melnykov.fab.ScrollDirectionListener;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity{
+public class MainActivity extends AppCompatActivity implements View.OnClickListener{
     private ListSMSMessageAdapter listSMSMessageAdapter;
     private EditText editPhoneActionBar;
     private String phoneSendTo;
     private Bundle bundlePhoneSendTo;
+    private Button btnBackActionBarMain;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,12 +60,16 @@ public class MainActivity extends AppCompatActivity{
             }
         });
 
+        //XUY LY ACTION BAR TREN GIAO DIEN MAIN ACTIVITY
+        //////////////////////////////////////////////////////////////////////////////////
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setDisplayShowCustomEnabled(true);
         getSupportActionBar().setCustomView(R.layout.custom_action_bar_layout);
         View view =getSupportActionBar().getCustomView();
         editPhoneActionBar = (EditText) view.findViewById(R.id.editTextPhoneActionBar);
 
+        //THEM NUT FLOATING ACTION BUTTON VAO GIAO DIEN MAIN ACTIVITY
+        ///////////////////////////////////////////////////////////////////////////////////
         FloatingActionButton fab = (FloatingActionButton) this.findViewById(R.id.fab);
         fab.attachToListView(SMSMessageManager.getOurInstance().getlistViewSMSMessage());
         fab.setType(FloatingActionButton.TYPE_NORMAL);
@@ -82,6 +88,11 @@ public class MainActivity extends AppCompatActivity{
         });
 
 
+        //NHAN NUT BACK TREN ACTION BACR DE DONG MAIN ACTIVITY
+        //////////////////////////////////////////////////////////////////////////////////////////
+        btnBackActionBarMain = (Button) view.findViewById(R.id.btnBackActionBarMain);
+        btnBackActionBarMain.setOnClickListener(MainActivity.this);
+
         //////////////////////////////////////////////////////////////////////////////////////////
         Window window = getWindow();
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
@@ -89,5 +100,11 @@ public class MainActivity extends AppCompatActivity{
         window.setStatusBarColor(Color.parseColor("#F57F17"));
     }
 
+    @Override
+    public void onClick(View v) {
+        int id = v.getId();
 
+        if (id==R.id.btnBackActionBarMain)
+                          MainActivity.this.finish();
+    }
 }
