@@ -78,23 +78,12 @@ public class AnswerActivity extends AppCompatActivity implements View.OnClickLis
     @Override
     public void onClick(View v) {
         int id = v.getId();
-        String phone = tvPhoneActionBar.getText().toString();
-        String bodySMS = editTextContentSendSMS.getText().toString();
 
         //khi nhan nut btnSend
         if (id == R.id.btnSend)
         {
-            try {
-                SmsManager smsManager = SmsManager.getDefault();
-                smsManager.sendTextMessage(phone, null, bodySMS, null, null);
-                Toast.makeText(getApplicationContext(), "SMS Sent!",
-                        Toast.LENGTH_LONG).show();
-            } catch (Exception e) {
-                Toast.makeText(getApplicationContext(),
-                        "SMS sends fail, please try again later!",
-                        Toast.LENGTH_LONG).show();
-                e.printStackTrace();
-            }
+            //Goi phuong thuc gui SMS
+            sendSMSMessage();
         }
 
         //khi nhan nut btnBackActionBar trong Action Bar Answer
@@ -102,4 +91,22 @@ public class AnswerActivity extends AppCompatActivity implements View.OnClickLis
                             AnswerActivity.this.finish();
     }
 
+    //Phuong thuc gui SMS
+    private void sendSMSMessage()
+    {
+        String phone = tvPhoneActionBar.getText().toString();
+        String bodySMS = editTextContentSendSMS.getText().toString();
+
+        try {
+            SmsManager smsManager = SmsManager.getDefault();
+            smsManager.sendTextMessage(phone, null, bodySMS, null, null);
+            Toast.makeText(getApplicationContext(), "SMS Sent!",
+                    Toast.LENGTH_LONG).show();
+        } catch (Exception e) {
+            Toast.makeText(getApplicationContext(),
+                    "SMS sends fail, please try again later!",
+                    Toast.LENGTH_LONG).show();
+            e.printStackTrace();
+        }
+    }
 }
