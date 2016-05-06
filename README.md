@@ -178,7 +178,7 @@ Trong fiile MainActivity.java, ta viết code dưới trong phương thức void
         View view =getSupportActionBar().getCustomView();
 ```
 
-Lấy dữ liệu từ tvPhoneActionBar
+Lấy dữ liệu từ view =getSupportActionBar().getCustomView() và đẩy dữ liệu vào tvPhoneActionBar
 ```
 private void initDisplayActionBarAnswer()
     {
@@ -191,6 +191,31 @@ private void initDisplayActionBarAnswer()
         tvPhoneActionBar = (TextView) view.findViewById(R.id.tvPhoneActionBar);
         displayPhoneActionBar = getIntent().getStringExtra("IDPhone").toString();
         tvPhoneActionBar.setText(displayPhoneActionBar);
+    }
+```
+
++ Phương thức Gửi tin nhắn SMS
+```
+@Override
+    public void onClick(View v) {
+        int id = v.getId();
+        String phone = tvPhoneActionBar.getText().toString();
+        String bodySMS = editTextContentSendSMS.getText().toString();
+
+        if (id == R.id.btnSend)
+        {
+            try {
+                SmsManager smsManager = SmsManager.getDefault();
+                smsManager.sendTextMessage(phone, null, bodySMS, null, null);
+                Toast.makeText(getApplicationContext(), "SMS Sent!",
+                        Toast.LENGTH_LONG).show();
+            } catch (Exception e) {
+                Toast.makeText(getApplicationContext(),
+                        "SMS sends fail, please try again later!",
+                        Toast.LENGTH_LONG).show();
+                e.printStackTrace();
+            }
+        }
     }
 ```
 
