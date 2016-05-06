@@ -1,6 +1,7 @@
 package techkids.mad3.sms;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -17,7 +18,7 @@ import android.widget.Toast;
  */
 public class AnswerActivity extends AppCompatActivity implements View.OnClickListener {
     private ListView lvDisplayAnswer;
-    private Button btnSend;
+    private Button btnSend, btnBackActionBar;
     private TextView tvPhone, tvPhoneActionBar;
     private EditText editTextContentSendSMS;
     private Bundle bundleReceive;
@@ -56,6 +57,7 @@ public class AnswerActivity extends AppCompatActivity implements View.OnClickLis
         lvDisplayAnswer.setAdapter(listSMSSendAdapter);
     }
 
+    //Phuong thuc hien thi cac thanh phan trong ActionBar Answer
     private void initDisplayActionBarAnswer()
     {
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
@@ -67,6 +69,10 @@ public class AnswerActivity extends AppCompatActivity implements View.OnClickLis
         tvPhoneActionBar = (TextView) view.findViewById(R.id.tvPhoneActionBar);
         displayPhoneActionBar = getIntent().getStringExtra("IDPhone").toString();
         tvPhoneActionBar.setText(displayPhoneActionBar);
+
+        //tim thanh phan Button btnBackActionBar
+        btnBackActionBar = (Button) view.findViewById(R.id.btnBackActionBar);
+        btnBackActionBar.setOnClickListener(this);
     }
 
     @Override
@@ -75,6 +81,7 @@ public class AnswerActivity extends AppCompatActivity implements View.OnClickLis
         String phone = tvPhoneActionBar.getText().toString();
         String bodySMS = editTextContentSendSMS.getText().toString();
 
+        //khi nhan nut btnSend
         if (id == R.id.btnSend)
         {
             try {
@@ -89,5 +96,10 @@ public class AnswerActivity extends AppCompatActivity implements View.OnClickLis
                 e.printStackTrace();
             }
         }
+
+        //khi nhan nut btnBackActionBar trong Action Bar Answer
+        if (id == R.id.btnBackActionBar)
+                            AnswerActivity.this.finish();
     }
+
 }

@@ -4,7 +4,7 @@
     android:layout_height="match_parent">
 
     <Button
-        android:id="@+id/btnBack"
+        android:id="@+id/btnBackActionBar"
         android:background="@drawable/back"
         android:layout_marginRight="@dimen/btnBack_marginRight"
         android:layout_marginTop="@dimen/btnBack_marginTop"
