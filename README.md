@@ -178,6 +178,26 @@ Trong fiile MainActivity.java, ta viết code dưới trong phương thức void
         View view =getSupportActionBar().getCustomView();
 ```
 
+Khi click vào nút Floating Action Button fb thì chuyển sang giao diện AnswerActivity
+```
+        FloatingActionButton fab = (FloatingActionButton) this.findViewById(R.id.fab);
+        fab.attachToListView(SMSMessageManager.getOurInstance().getlistViewSMSMessage());
+        fab.setType(FloatingActionButton.TYPE_NORMAL);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                phoneSendTo = editPhoneActionBar.getText().toString();
+                //lay du lieu tu editTextPhoneActionBar va dung bundle dong goi du lieu, sau do intent day goi du lieu nay sang AnswerActivity
+                bundlePhoneSendTo = new Bundle();
+                bundlePhoneSendTo.putString("IDPhone", phoneSendTo);
+
+                Intent intentOpenAnswerActivity = new Intent(MainActivity.this, AnswerActivity.class);
+                intentOpenAnswerActivity.putExtras(bundlePhoneSendTo);
+                startActivity(intentOpenAnswerActivity);
+            }
+        });
+```
+
 Lấy dữ liệu từ view =getSupportActionBar().getCustomView() và đẩy dữ liệu vào tvPhoneActionBar
 ```
 private void initDisplayActionBarAnswer()
