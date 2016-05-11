@@ -14,7 +14,7 @@
         android:paddingTop="@dimen/tvAnswerLeft_paddingTop"
         android:paddingLeft="@dimen/tvAnswerLeft_paddingLeft"
         android:paddingRight="@dimen/tvAnswerLeft_paddingRight"
-
+        android:background="@drawable/shape_type_of_left"
         android:layout_toRightOf="@id/imgAvatarSend"
         android:layout_width="@dimen/tvAnswerLeft_width"
         android:layout_height="@dimen/tvAnswerLeft_height" />
@@ -22,6 +22,7 @@
     <TextView
         android:id="@+id/tvAnswerRight"
         android:layout_below="@id/tvAnswerLeft"
+        android:background="@drawable/shape_type_of_right"
         android:paddingTop="@dimen/tvAnswerRight_paddingTop"
         android:paddingLeft="@dimen/tvAnswerRight_paddingLeft"
         android:paddingRight="@dimen/tvAnswerRight_paddingRight"
