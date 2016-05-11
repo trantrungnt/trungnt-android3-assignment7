@@ -120,16 +120,19 @@ public class AnswerActivity extends AppCompatActivity implements View.OnClickLis
             e.printStackTrace();
         }
 
-//        sendSMS = new SendSMS(phone, bodySMS, currentSendDate);
-//
-//        SMSMessageManager.getOurInstance().getArrayListSMSSend().add(sendSMS);
-//        ListSMSSendAdapter listSMSSendAdapter = new ListSMSSendAdapter((Context)this, R.layout.answer_template,
-//                SMSMessageManager.getOurInstance().getArrSMSMessage(),
-//                SMSMessageManager.getOurInstance().getArrayListSMSSend()
-//        );
-//        SMSMessageManager.getOurInstance().setListViewSendSMS(lvDisplayAnswer);
-//        SMSMessageManager.getOurInstance().setListSMSSendAdapter(listSMSSendAdapter);
-//        SMSMessageManager.getOurInstance().getListViewSendSMS().setAdapter(SMSMessageManager.getOurInstance().getListSMSSendAdapter());
-//        SMSMessageManager.getOurInstance().getListSMSSendAdapter().notifyDataSetChanged();
+        MessageList messageList = new MessageList();
+        messageList.setPhone(phone);
+        messageList.setType(0);
+        messageList.setContent(bodySMS);
+
+        SMSMessageManager.getOurInstance().getarrMessageList().add(messageList);
+        ListSMSSendAdapter listSMSSendAdapter = new ListSMSSendAdapter((Context)this, R.layout.answer_template,
+                SMSMessageManager.getOurInstance().getarrMessageList()
+        );
+
+        SMSMessageManager.getOurInstance().setListViewSMSSend(lvDisplayAnswer);
+        SMSMessageManager.getOurInstance().setListSMSSendAdapter(listSMSSendAdapter);
+        SMSMessageManager.getOurInstance().getListViewSMSSend().setAdapter(SMSMessageManager.getOurInstance().getListSMSSendAdapter());
+        SMSMessageManager.getOurInstance().getListSMSSendAdapter().notifyDataSetChanged();
     }
 }

@@ -40,6 +40,29 @@ public class SMSMessageManager extends Application {
         return arrMessageList;
     }
 
+    private static ListSMSSendAdapter listSMSSendAdapter;
+    private static ListView listViewSMSSend;
+
+    public void setListSMSSendAdapter(ListSMSSendAdapter listSMSSendAdapter)
+    {
+        this.listSMSSendAdapter = listSMSSendAdapter;
+    }
+
+    public ListSMSSendAdapter getListSMSSendAdapter()
+    {
+        return this.listSMSSendAdapter;
+    }
+
+    public void setListViewSMSSend(ListView listViewSMSSend)
+    {
+        this.listViewSMSSend = listViewSMSSend;
+    }
+
+    public ListView getListViewSMSSend()
+    {
+        return this.listViewSMSSend;
+    }
+
     public static SMSMessageManager getOurInstance() {
         return ourInstance;
     }
