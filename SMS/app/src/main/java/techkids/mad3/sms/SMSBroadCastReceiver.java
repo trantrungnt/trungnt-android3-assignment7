@@ -13,6 +13,7 @@ import android.util.Log;
 import android.widget.ListView;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 
 /**
@@ -40,11 +41,15 @@ public class SMSBroadCastReceiver extends BroadcastReceiver {
 
                 //////////////////////////////////////////////////////////////////////////////////
                 //luu so dien thoai va noi dung tin nhan vua nhan vao SMSMessageManager
-                ReceiveSMS receiveSMS = new ReceiveSMS(address, smsBody, currentDate);
-                SMSMessageManager.getOurInstance().getArrSMSMessage().add(receiveSMS);
+                MessageList messageList = new MessageList();
+                messageList.setPhone(address);
+                messageList.setContent(smsBody);
+                messageList.setType(1);
+
+                SMSMessageManager.getOurInstance().getarrMessageList().add(messageList);
                 //thong bao Notification cua ListView o day
                 SMSMessageManager.getOurInstance().getListMessageAdapter().notifyDataSetChanged();
-                Log.d("4444", String.valueOf(SMSMessageManager.getOurInstance().getArrSMSMessage().size()));
+                Log.d("4444", String.valueOf(SMSMessageManager.getOurInstance().getarrMessageList().size()));
                 ///////////////////////////////////////////////////////////////////////////////////
                 //Hien thi Notification khi nhan duoc tin nhan SMS
                 NotificationCompat.Builder mBuilder =

@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void initDisplayListSMSMessage()
     {
-        listSMSMessageAdapter = new ListSMSMessageAdapter((Context) this, R.layout.sms_message_template, SMSMessageManager.getOurInstance().getArrSMSMessage());
+        listSMSMessageAdapter = new ListSMSMessageAdapter((Context) this, R.layout.sms_message_template, SMSMessageManager.getOurInstance().getarrMessageList());
         SMSMessageManager.getOurInstance().setListMessageAdapter(listSMSMessageAdapter);
         SMSMessageManager.getOurInstance().setListViewSMSMessage((ListView) this.findViewById(R.id.lvDisplaySMSList));
         SMSMessageManager.getOurInstance().getlistViewSMSMessage().setAdapter(SMSMessageManager.getOurInstance().getListMessageAdapter());

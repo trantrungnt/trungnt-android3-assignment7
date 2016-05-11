@@ -14,21 +14,21 @@ import java.util.ArrayList;
  * Created by TrungNT on 4/29/2016.
  */
 public class ListSMSMessageAdapter  extends BaseAdapter {
-    private ArrayList<ReceiveSMS> arrListReceiveSMS;
+    private ArrayList<MessageList> arrMessageList;
     private int LayoutItemID;
     private TextView txtPhone, txtContentSMSMessage;
     private Context mContext;
-    private ReceiveSMS receiveSMS;
+    private MessageList messageList;
     private ImageView avatar;
 
     @Override
     public int getCount() {
-        return arrListReceiveSMS.size();
+        return arrMessageList.size();
     }
 
     @Override
-    public ReceiveSMS getItem(int position) {
-        return arrListReceiveSMS.get(position);
+    public MessageList getItem(int position) {
+        return arrMessageList.get(position);
     }
 
     @Override
@@ -38,7 +38,7 @@ public class ListSMSMessageAdapter  extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        receiveSMS = arrListReceiveSMS.get(position);
+        messageList = arrMessageList.get(position);
 
         if (convertView == null) {
             convertView = LayoutInflater.from(mContext).inflate(R.layout.sms_message_template, parent, false);
@@ -55,16 +55,18 @@ public class ListSMSMessageAdapter  extends BaseAdapter {
         else
             avatar.setImageResource(R.drawable.person1);
 
-        txtPhone.setText(receiveSMS.getPhone());
-        txtContentSMSMessage.setText(receiveSMS.getLastSMSBodyElement().getContentSMS().toString());
+        txtPhone.setText(messageList.getPhone());
+
+        if (Help.TYPE_RECEIVE_SMS == messageList.getType())
+                txtContentSMSMessage.setText(messageList.getContent());
 
         return convertView;
     }
 
-    public ListSMSMessageAdapter(Context mContext, int layoutItemID, ArrayList<ReceiveSMS> arrListReceiveSMS)
+    public ListSMSMessageAdapter(Context mContext, int layoutItemID, ArrayList<MessageList> arrListMessage)
     {
         this.mContext = mContext;
         this.LayoutItemID = layoutItemID;
-        this.arrListReceiveSMS = arrListReceiveSMS;
+        this.arrMessageList = arrListMessage;
     }
 }

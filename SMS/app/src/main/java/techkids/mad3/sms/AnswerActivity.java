@@ -29,6 +29,8 @@ public class AnswerActivity extends AppCompatActivity implements View.OnClickLis
     private static final SimpleDateFormat sendDateFormat = new SimpleDateFormat("MMM dd");
     private Date strSendCurrentDate;
 
+    //private ListSMSSendAdapter listSMSSendAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,8 +60,8 @@ public class AnswerActivity extends AppCompatActivity implements View.OnClickLis
         btnSend.setOnClickListener(this);
 
         /////////////////////////////////////////////////////////////////////////////////////////
-        ListSMSSendAdapter listSMSSendAdapter = new ListSMSSendAdapter((Context)this, R.layout.answer_template, SMSMessageManager.getOurInstance().getArrSMSMessage(), SMSMessageManager.getOurInstance().getArrayListSMSSend());
-        lvDisplayAnswer.setAdapter(listSMSSendAdapter);
+//        ListSMSSendAdapter listSMSSendAdapter = new ListSMSSendAdapter((Context)this, R.layout.answer_template);
+//        lvDisplayAnswer.setAdapter(listSMSSendAdapter);
     }
 
     //Phuong thuc hien thi cac thanh phan trong ActionBar Answer
@@ -102,11 +104,15 @@ public class AnswerActivity extends AppCompatActivity implements View.OnClickLis
         String phone = tvPhoneActionBar.getText().toString();
         String bodySMS = editTextContentSendSMS.getText().toString();
 
+        strSendCurrentDate = new Date();
+        String currentSendDate = sendDateFormat.format(strSendCurrentDate);
+
         try {
             SmsManager smsManager = SmsManager.getDefault();
             smsManager.sendTextMessage(phone, null, bodySMS, null, null);
             Toast.makeText(getApplicationContext(), "SMS Sent!",
                     Toast.LENGTH_LONG).show();
+
         } catch (Exception e) {
             Toast.makeText(getApplicationContext(),
                     "SMS sends fail, please try again later!",
@@ -114,12 +120,16 @@ public class AnswerActivity extends AppCompatActivity implements View.OnClickLis
             e.printStackTrace();
         }
 
-        strSendCurrentDate = new Date();
-        String currentSendDate = sendDateFormat.format(strSendCurrentDate);
-
-        SendSMS sendSMS = new SendSMS(phone, bodySMS, currentSendDate);
-        SMSMessageManager.getOurInstance().getArrayListSMSSend().add(sendSMS);
-
-
+//        sendSMS = new SendSMS(phone, bodySMS, currentSendDate);
+//
+//        SMSMessageManager.getOurInstance().getArrayListSMSSend().add(sendSMS);
+//        ListSMSSendAdapter listSMSSendAdapter = new ListSMSSendAdapter((Context)this, R.layout.answer_template,
+//                SMSMessageManager.getOurInstance().getArrSMSMessage(),
+//                SMSMessageManager.getOurInstance().getArrayListSMSSend()
+//        );
+//        SMSMessageManager.getOurInstance().setListViewSendSMS(lvDisplayAnswer);
+//        SMSMessageManager.getOurInstance().setListSMSSendAdapter(listSMSSendAdapter);
+//        SMSMessageManager.getOurInstance().getListViewSendSMS().setAdapter(SMSMessageManager.getOurInstance().getListSMSSendAdapter());
+//        SMSMessageManager.getOurInstance().getListSMSSendAdapter().notifyDataSetChanged();
     }
 }
