@@ -3,6 +3,10 @@
 + Viết ứng dụng Gửi/Nhận tin nhắn 
 ![BTVN-2742016-Receive/SendSMS](http://i477.photobucket.com/albums/rr132/trungepu/BTVN-242016-Receive-SendSMS_zpsvnsoforl.jpg)
 
++ Sửa lại các class cho dễ hiểu và dễ sủ dụng, hợp lý hơn 
+[Gợi ý của em Hùng](http://i477.photobucket.com/albums/rr132/trungepu/goi_y_btvn_sms_zps7bistgoy.jpg)
+
+
 ## Demo Code
 + [Demo Gửi/Nhận SMS và Custom Action Bar verson 1](https://youtu.be/taLripFeC-Y)
 
