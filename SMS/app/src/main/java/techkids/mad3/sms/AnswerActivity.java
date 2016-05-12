@@ -62,6 +62,7 @@ public class AnswerActivity extends AppCompatActivity implements View.OnClickLis
         btnSend.setOnClickListener(this);
 
         connectDisplayListViewSend();
+        SMSMessageManager.getOurInstance().getListSMSSendAdapter().notifyDataSetChanged();
     }
 
     //Phuong thuc hien thi cac thanh phan trong ActionBar Answer
@@ -126,6 +127,7 @@ public class AnswerActivity extends AppCompatActivity implements View.OnClickLis
 
         SMSMessageManager.getOurInstance().getarrMessageList().add(messageList);
         connectDisplayListViewSend();
+        SMSMessageManager.getOurInstance().getListSMSSendAdapter().notifyDataSetChanged();
     }
 
     //ket noi ListViewSend va hien thi du lieu tren ListView
@@ -138,6 +140,6 @@ public class AnswerActivity extends AppCompatActivity implements View.OnClickLis
         SMSMessageManager.getOurInstance().setListViewSMSSend(lvDisplayAnswer);
         SMSMessageManager.getOurInstance().setListSMSSendAdapter(listSMSSendAdapter);
         SMSMessageManager.getOurInstance().getListViewSMSSend().setAdapter(SMSMessageManager.getOurInstance().getListSMSSendAdapter());
-        SMSMessageManager.getOurInstance().getListSMSSendAdapter().notifyDataSetChanged();
+
     }
 }
