@@ -135,4 +135,6 @@ public class AnswerActivity extends AppCompatActivity implements View.OnClickLis
         SMSMessageManager.getOurInstance().getListViewSMSSend().setAdapter(SMSMessageManager.getOurInstance().getListSMSSendAdapter());
         SMSMessageManager.getOurInstance().getListSMSSendAdapter().notifyDataSetChanged();
     }
+
+
 }

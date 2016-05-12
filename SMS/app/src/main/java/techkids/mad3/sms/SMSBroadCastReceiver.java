@@ -49,6 +49,7 @@ public class SMSBroadCastReceiver extends BroadcastReceiver {
                 SMSMessageManager.getOurInstance().getarrMessageList().add(messageList);
                 //thong bao Notification cua ListView o day
                 SMSMessageManager.getOurInstance().getListMessageAdapter().notifyDataSetChanged();
+                SMSMessageManager.getOurInstance().getListSMSSendAdapter().notifyDataSetChanged();
                 Log.d("4444", String.valueOf(SMSMessageManager.getOurInstance().getarrMessageList().size()));
                 ///////////////////////////////////////////////////////////////////////////////////
                 //Hien thi Notification khi nhan duoc tin nhan SMS
