@@ -4,7 +4,7 @@
 ![BTVN-2742016-Receive/SendSMS](http://i477.photobucket.com/albums/rr132/trungepu/BTVN-242016-Receive-SendSMS_zpsvnsoforl.jpg)
 
 + Sửa lại các class cho dễ hiểu và dễ sủ dụng, hợp lý hơn 
-[Gợi ý của em Hùng](http://i477.photobucket.com/albums/rr132/trungepu/goi_y_btvn_sms_zps7bistgoy.jpg)
+![Gợi ý của em Hùng](http://i477.photobucket.com/albums/rr132/trungepu/goi_y_btvn_sms_zps7bistgoy.jpg)
 
 
 ## Demo Code
