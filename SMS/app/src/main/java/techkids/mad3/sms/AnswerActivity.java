@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.telephony.SmsManager;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -28,6 +29,7 @@ public class AnswerActivity extends AppCompatActivity implements View.OnClickLis
     private String displayPhoneActionBar;
     private static final SimpleDateFormat sendDateFormat = new SimpleDateFormat("MMM dd");
     private Date strSendCurrentDate;
+    private MessageList messageList = new MessageList();
 
     //private ListSMSSendAdapter listSMSSendAdapter;
 
@@ -59,9 +61,7 @@ public class AnswerActivity extends AppCompatActivity implements View.OnClickLis
         btnSend = (Button) this.findViewById(R.id.btnSend);
         btnSend.setOnClickListener(this);
 
-        /////////////////////////////////////////////////////////////////////////////////////////
-//        ListSMSSendAdapter listSMSSendAdapter = new ListSMSSendAdapter((Context)this, R.layout.answer_template);
-//        lvDisplayAnswer.setAdapter(listSMSSendAdapter);
+        connectDisplayListViewSend();
     }
 
     //Phuong thuc hien thi cac thanh phan trong ActionBar Answer
@@ -120,12 +120,17 @@ public class AnswerActivity extends AppCompatActivity implements View.OnClickLis
             e.printStackTrace();
         }
 
-        MessageList messageList = new MessageList();
         messageList.setPhone(phone);
         messageList.setType(0);
         messageList.setContent(bodySMS);
 
         SMSMessageManager.getOurInstance().getarrMessageList().add(messageList);
+        connectDisplayListViewSend();
+    }
+
+    //ket noi ListViewSend va hien thi du lieu tren ListView
+    private void connectDisplayListViewSend()
+    {
         ListSMSSendAdapter listSMSSendAdapter = new ListSMSSendAdapter((Context)this, R.layout.answer_template,
                 SMSMessageManager.getOurInstance().getarrMessageList()
         );
@@ -135,6 +140,4 @@ public class AnswerActivity extends AppCompatActivity implements View.OnClickLis
         SMSMessageManager.getOurInstance().getListViewSMSSend().setAdapter(SMSMessageManager.getOurInstance().getListSMSSendAdapter());
         SMSMessageManager.getOurInstance().getListSMSSendAdapter().notifyDataSetChanged();
     }
-
-
 }

@@ -65,10 +65,15 @@ public class ListSMSSendAdapter extends BaseAdapter {
 
         if (Help.TYPE_RECEIVE_SMS == message.getType())
         {
-            txtContentSMSReceive.setText(message.getContent());
-            txtContentSMSReceive.setVisibility(View.VISIBLE);
-            txtContentSMSSend.setVisibility(View.GONE);
+                txtContentSMSReceive.setText(message.getContent());
+                txtContentSMSReceive.setVisibility(View.VISIBLE);
+                txtContentSMSSend.setVisibility(View.GONE);
         }
+
+//        //check content null
+//        if(Help.TYPE_RECEIVE_SMS == message.getType() && U message.getContent()) {
+//
+//        }
 
         return convertView;
     }
