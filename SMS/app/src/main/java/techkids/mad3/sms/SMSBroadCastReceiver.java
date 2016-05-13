@@ -49,12 +49,20 @@ public class SMSBroadCastReceiver extends BroadcastReceiver {
 
                 SMSMessageManager.getOurInstance().getarrMessageList().add(messageList);
                 //thong bao Notification cua ListView o day
-                SMSMessageManager.getOurInstance().getListMessageAdapter().notifyDataSetChanged();
-                //kiem tra du lieu content body sms co kieu send sms hoac receive sms la null hoac empty khong?
-                if ((messageList.getType()==Help.TYPE_SEND_SMS) && (!TextUtils.isEmpty(messageList.getContent()))
-                    || (messageList.getType()==Help.TYPE_RECEIVE_SMS) && (!TextUtils.isEmpty(messageList.getContent()))
-                   )
-                                                    SMSMessageManager.getOurInstance().getListSMSSendAdapter().notifyDataSetChanged();
+                if (messageList.getType() == Help.TYPE_RECEIVE_SMS && !TextUtils.isEmpty(messageList.getContent())) {
+                                                            SMSMessageManager.getOurInstance().getListMessageAdapter().notifyDataSetChanged();
+                    if ((messageList.getType()==Help.TYPE_SEND_SMS) && (!TextUtils.isEmpty(messageList.getContent())))
+                                            SMSMessageManager.getOurInstance().getListSMSSendAdapter().notifyDataSetChanged();
+                }
+//               else //kiem tra du lieu content body sms co kieu send sms hoac receive sms la null hoac empty khong?
+//                if ((messageList.getType()==Help.TYPE_SEND_SMS) && (!TextUtils.isEmpty(messageList.getContent()))
+//                            //&& (messageList.getType()==Help.TYPE_RECEIVE_SMS) && (!TextUtils.isEmpty(messageList.getContent()))
+//                       )
+//                {
+//                    SMSMessageManager.getOurInstance().getListSMSSendAdapter().notifyDataSetChanged();
+//                }
+
+
                 Log.d("4444", String.valueOf(SMSMessageManager.getOurInstance().getarrMessageList().size()));
                 ///////////////////////////////////////////////////////////////////////////////////
                 //Hien thi Notification khi nhan duoc tin nhan SMS
